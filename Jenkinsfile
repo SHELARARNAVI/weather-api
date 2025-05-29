@@ -4,13 +4,13 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'npm install'
+        bat 'npm install'
       }
     }
 
     stage('Test') {
       steps {
-        sh 'npm test'
+        bat 'npm test'
       }
     }
 
@@ -28,8 +28,8 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        sh 'docker build -t weather-api .'
-        sh 'docker run -d -p 3000:3000 weather-api'
+        bat 'docker build -t weather-api .'
+        bat 'docker run -d -p 3000:3000 weather-api'
       }
     }
 
