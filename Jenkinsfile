@@ -26,13 +26,6 @@ pipeline {
       }
     }
 
-    stage('Deploy') {
-      steps {
-        bat 'docker build -t weather-api .'
-        bat 'docker run -d -p 3000:3000 weather-api'
-      }
-    }
-
     stage('Release') {
       steps {
         echo 'Release tagging or deployment to prod would go here'
